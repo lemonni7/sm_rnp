@@ -683,6 +683,32 @@ followup3_df = followup_df = read_excel(&quot;./r-sm-rnp.xlsx&quot;) %&gt;%
 </tbody>
 </table>
 </div>
+<div id="perform-mann-whitney-u-test" class="section level2">
+<h2>Perform Mann Whitney U test</h2>
+<p>Perform Mann Whitney U test between double positive and Sm-RNP
+positive group</p>
+<pre class="r"><code>followup1_df = followup_df = read_excel(&quot;./r-sm-rnp.xlsx&quot;) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  select(group, follow_up_length) %&gt;% 
+  filter(group &lt; 3)
+
+result_dp_smrnp = wilcox.test(follow_up_length~group, followup1_df, exact = FALSE)</code></pre>
+<p>Perform Mann Whitney U test between double positive and RNP positive
+group</p>
+<pre class="r"><code>followup2_df = followup_df = read_excel(&quot;./r-sm-rnp.xlsx&quot;) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  select(group, follow_up_length) %&gt;% 
+  filter(group != 2)
+
+result_dp_rnp = wilcox.test(follow_up_length~group, followup2_df, exact = FALSE)</code></pre>
+<p>Perform Mann Whitney U test between Sm-RNP and RNP positive group</p>
+<pre class="r"><code>followup3_df = followup_df = read_excel(&quot;./r-sm-rnp.xlsx&quot;) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  select(group, follow_up_length) %&gt;% 
+  filter(group != 1)
+
+result_smrnp_rnp = wilcox.test(follow_up_length~group, followup3_df, exact = FALSE)</code></pre>
+</div>
 
 
 
