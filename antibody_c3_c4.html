@@ -369,10 +369,19 @@ display: none;
 <pre class="r"><code>library(readxl)</code></pre>
 <div id="import-data" class="section level2">
 <h2>Import data</h2>
-<p>Import all antibody datasets</p>
+<p>Import all antibody datasets and separate into anti-dsdna, low c3 or
+c4, low c3 and c4 groups</p>
 <pre class="r"><code>ab_df = read_excel(&quot;r-sm-rnp-ab.xlsx&quot;) %&gt;% 
   janitor::clean_names() %&gt;% 
-  select(group, dsdna, low_or, low_both)</code></pre>
+  select(group, dsdna)
+
+or_df = read_excel(&quot;r-sm-rnp-ab.xlsx&quot;) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  select(group, low_or)
+
+and_df = read_excel(&quot;r-sm-rnp-ab.xlsx&quot;) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  select(group, low_both)</code></pre>
 </div>
 
 

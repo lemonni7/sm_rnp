@@ -11,10 +11,19 @@ library(readxl)
 
 ## Import data
 
-Import all antibody datasets
+Import all antibody datasets and separate into anti-dsdna, low c3 or c4, low c3 and c4 groups
 
 ```{r}
 ab_df = read_excel("r-sm-rnp-ab.xlsx") %>% 
   janitor::clean_names() %>% 
-  select(group, dsdna, low_or, low_both)
+  select(group, dsdna)
+
+or_df = read_excel("r-sm-rnp-ab.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, low_or)
+
+and_df = read_excel("r-sm-rnp-ab.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, low_both)
 ```
+
