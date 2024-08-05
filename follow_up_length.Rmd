@@ -37,6 +37,8 @@ followup3_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>%
 ## Check distribution
 
 ```{r}
+skimr::skim(followup_df)
+
 skimr::skim(followup1_df)
 
 skimr::skim(followup2_df)
