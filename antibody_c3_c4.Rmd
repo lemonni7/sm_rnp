@@ -27,3 +27,12 @@ and_df = read_excel("r-sm-rnp-ab.xlsx") %>%
   select(group, low_both)
 ```
 
+## Run Chi-Square test
+
+```{r}
+result_dsdna = chisq.test(ab_df$group, ab_df$dsdna, correct = FALSE)
+
+result_or = chisq.test(or_df$group, or_df$low_or, correct = FALSE)
+
+result_and = chisq.test(and_df$group, and_df$low_both, correct = FALSE)
+```

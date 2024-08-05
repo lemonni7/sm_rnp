@@ -383,6 +383,18 @@ and_df = read_excel(&quot;r-sm-rnp-ab.xlsx&quot;) %&gt;%
   janitor::clean_names() %&gt;% 
   select(group, low_both)</code></pre>
 </div>
+<div id="run-chi-square-test" class="section level2">
+<h2>Run Chi-Square test</h2>
+<pre class="r"><code>result_dsdna = chisq.test(ab_df$group, ab_df$dsdna, correct = FALSE)</code></pre>
+<pre><code>## Warning in chisq.test(ab_df$group, ab_df$dsdna, correct = FALSE):
+## Chi-squared近似算法有可能不准</code></pre>
+<pre class="r"><code>result_or = chisq.test(or_df$group, or_df$low_or, correct = FALSE)</code></pre>
+<pre><code>## Warning in chisq.test(or_df$group, or_df$low_or, correct = FALSE):
+## Chi-squared近似算法有可能不准</code></pre>
+<pre class="r"><code>result_and = chisq.test(and_df$group, and_df$low_both, correct = FALSE)</code></pre>
+<pre><code>## Warning in chisq.test(and_df$group, and_df$low_both, correct = FALSE):
+## Chi-squared近似算法有可能不准</code></pre>
+</div>
 
 
 
