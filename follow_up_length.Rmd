@@ -1,0 +1,36 @@
+---
+title: "sm_rnp_f_u_length"
+output: html_document
+date: "2024-08-05"
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+## Import data
+
+Import all follow-up length dataset and separate to 3 groups
+
+```{r}
+followup_df = read_excel("./r-sm-rnp.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, follow_up_length)
+
+followup1_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, follow_up_length) %>% 
+  filter(group == 1)
+
+followup2_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, follow_up_length) %>% 
+  filter(group == 2)
+
+followup3_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>% 
+  janitor::clean_names() %>% 
+  select(group, follow_up_length) %>% 
+  filter(group == 3)
+```
+
