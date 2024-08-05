@@ -34,3 +34,13 @@ followup3_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>%
   filter(group == 3)
 ```
 
+## Check distribution
+
+```{r}
+skimr::skim(followup1_df)
+
+skimr::skim(followup2_df)
+
+skimr::skim(followup3_df)
+```
+
