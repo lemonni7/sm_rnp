@@ -709,6 +709,33 @@ result_dp_rnp = wilcox.test(follow_up_length~group, followup2_df, exact = FALSE)
 
 result_smrnp_rnp = wilcox.test(follow_up_length~group, followup3_df, exact = FALSE)</code></pre>
 </div>
+<div id="follow-up-length-comparison-between-two-groups" class="section level1">
+<h1>Follow Up Length Comparison Between Two Groups</h1>
+<p>Comparison between double positive and Sm-RNP only</p>
+<pre class="r"><code>result_dp_smrnp</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  follow_up_length by group
+## W = 357.5, p-value = 0.9334
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Comparison between double positive and RNP only</p>
+<pre class="r"><code>result_dp_rnp</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  follow_up_length by group
+## W = 1891.5, p-value = 0.1088
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Comparison between Sm-RNP and RNP only</p>
+<pre class="r"><code>result_smrnp_rnp</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  follow_up_length by group
+## W = 687.5, p-value = 0.2711
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
 
 
 

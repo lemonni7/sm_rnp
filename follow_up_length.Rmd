@@ -79,3 +79,20 @@ followup3_df = followup_df = read_excel("./r-sm-rnp.xlsx") %>%
 result_smrnp_rnp = wilcox.test(follow_up_length~group, followup3_df, exact = FALSE)
 ```
 
+# Follow Up Length Comparison Between Two Groups
+
+Comparison between double positive and Sm-RNP only
+```{r}
+result_dp_smrnp
+```
+
+Comparison between double positive and RNP only
+```{r}
+result_dp_rnp
+```
+
+Comparison between Sm-RNP and RNP only
+```{r}
+result_smrnp_rnp
+```
+
